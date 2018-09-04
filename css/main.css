@@ -203,7 +203,7 @@ div.box.violet span {
 }
 
 .game.game-box .content .description {
-    display: none;
+    padding: 10px 20px;
 }
 
 label.circle {
@@ -531,10 +531,34 @@ section.about img {
     margin-bottom: 50px;
 }
 
+section.about ul.main-list {
+    list-style: none;
+}
+
+section.about ul.main-list li {
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+section.about ul.main-list li:before {
+    content: '✓';
+    font-weight: bold;
+    position: absolute;
+    left: 40px;
+}
+
+section.about .schema {
+    margin-top: 30px;
+    position: relative;
+}
 
 section.about .schema .item {
     position: absolute;
     top: 0;
+}
+
+section.about .schema h4::before {
+    left: calc(50% - 70px);
 }
 
 section.about .item h4 {
@@ -574,8 +598,12 @@ section.about .item-you .floating-text {
 }
 
 section.about .item-game {
-    left: 63%;
-    top: 34% !important;
+    left: 64%;
+    top: 36% !important;
+}
+
+section.about .item-game h4 {
+    font-size: 30px;
 }
 
 section.about .item-game .floating-text {
@@ -585,7 +613,7 @@ section.about .item-game .floating-text {
 }
 
 section.about .item-demo {
-    left: 53%;
+    left: 53.3%;
     top: 67% !important;
 }
 
@@ -601,7 +629,7 @@ section.about .item-demo .floating-text {
 }
 
 section.about .item-production {
-    left: 28.5%;
+    left: 27.8%;
     top: 70% !important;
 }
 
@@ -617,7 +645,7 @@ section.about .item-production .floating-text {
 }
 
 section.about .item-profit {
-    left: 24%;
+    left: 23.5%;
     top: 36% !important;
 }
 
@@ -671,7 +699,6 @@ section.faq .list .item .header::after {
 }
 
 section.faq .list .item .description {
-    display: none;
     font-size: 14px;
     color: #fff;
     padding: 20px 0;
@@ -727,7 +754,7 @@ section.team .person .photo img {
 
 section.team .person p {
     font-size: 11px;
-    bottom: 30px;
+    margin-bottom: 10px;
     color: #0ac9c9;
     background: rgba(10,201,201,.1);
     padding: 10px 3px 10px 15px;
@@ -738,18 +765,6 @@ section.team .person p {
 section.team .person .photo img {
     width: 100%;
 }
-/*
-section.team .person p::after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    position: absolute;
-    bottom: -8px;
-    border-top: 8px solid rgba(10,201,201,.1);
-    left: 15px;
-}*/
 
 section.team .person.active p {
     display: block;
@@ -762,16 +777,16 @@ section.team .person.active .photo img {
 section.team .person.active h3 {
     opacity: 0;
 }
-/*
+
 section.team .person h4::after {
-    float: right;
-    margin-right: 10px;
+    right: 15px;
     content: "\f078";
     font-family: FontAwesome;
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
-}*/
+    position: absolute;
+}
 
 section.team .person.active h4::after {
     content: "\f00d";
@@ -819,12 +834,12 @@ section.roadmap .line {
 }
 
 section.roadmap .line::before {
-    width: 2px;
-    background-color: #eb0053;
+    width: 3px;
+    background-color: #fff;
     height: 100%;
     content: "";
     position: absolute;
-    left: 50%;
+    left: 49.8%;
 }
 
 section.roadmap .map .left {
@@ -836,35 +851,39 @@ section.roadmap .map .right {
 }
 
 section.roadmap .map .cloud {
-    border: solid 1px #ff6b6b;
     border-radius: 5px;
     color: #fff;
+    background-color: rgba(255, 255, 255, 0.3);
     font-size: 13px;
     padding: 15px 20px;
     position: relative;
     margin: 10px 0;
+    -webkit-box-shadow: 3px 3px 15px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 3px 3px 15px 0px rgba(0,0,0,0.35);
+    box-shadow: 3px 3px 15px 0px rgba(0,0,0,0.35);
 }
 
 section.roadmap .map .date {
     display: table;
     height: 100%;
     width: 100%;
+    font-size: 12px;
 }
-
+/*
 section.roadmap .map .date::before {
     content: "";
     position: absolute;
-    top: 50%;
-    left: 10px;
+    top: 49%;
+    left: 5px;
     width: 15px;
-    background-color: #eb0053;
-    height: 2px;
+    background-color: #fff;
+    height: 3px;
 }
 
 section.roadmap .map .date.left::before {
-    right: 10px;
+    right: 7px;
     left: auto;
-}
+}*/
 
 section.roadmap .map .date div {
     display: table-cell;
@@ -877,7 +896,7 @@ section.roadmap .map .item {
 }
 
 section.roadmap .map .map-col {
-    padding: 0 35px;
+    padding: 0 25px;
 }
 
 section.roadmap .map .item::before {
@@ -891,9 +910,9 @@ section.roadmap .map .item::before {
     transition: all .3s;
     font-size: 30px;
     background-color: #47acff;
-    border: 2px solid #eb0053;
-    height: 20px;
-    width: 20px;
+    border: 3px solid #fff;
+    height: 15px;
+    width: 15px;
     border-radius: 100%;
 }
 
@@ -903,18 +922,104 @@ section.roadmap .date {
 }
 
 footer {
-    background-color: #000212;
-    text-align: center;
-    padding: 20px 0;
     color: #fff;
     font-size: 13px;
-    /*position: absolute;
-    width: 100%;
-    bottom: 0;*/
 }
 
 footer strong {
     font-weight: normal;
+}
+
+footer .socials {
+    background-color: #000212;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .socials a {
+    -webkit-transition: -webkit-transform 0.3s, all 0.3s;
+    -moz-transition: -moz-transform 0.3s, all 0.3s;
+    transition: transform 0.3s, all 0.3s;
+    color: #fff;
+    font-size: 25px;
+    margin-right: 25px;
+}
+
+footer .socials a:hover,
+footer .socials a:focus {
+    -webkit-transition: -webkit-transform 0.3s, all 0.3s;
+    -moz-transition: -moz-transform 0.3s, all 0.3s;
+    transition: transform 0.3s, all 0.3s;
+    color: #ff5e5e;
+    text-decoration: none;
+}
+
+footer .socials a:last-child {
+    margin-right: 0;
+}
+
+footer .links {
+    background-color: rgb(36, 40, 50);
+    padding: 40px 0;
+}
+
+footer .links .main .logo img {
+    width: 80px;
+}
+
+footer .links .main p {
+    margin-top: 30px;
+    font-size: 12px;
+}
+
+footer .links .main .contact {
+    margin-top: 0px;
+    font-size: 12px;
+}
+
+footer .links .urls,
+footer .links .urls h3{
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+footer .links .urls ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+footer .links .urls ul li {
+    margin-bottom: 5px;
+}
+
+footer .links .urls ul li a {
+    color: #fff;
+    -webkit-transition: -webkit-transform 0.3s, all 0.3s;
+    -moz-transition: -moz-transform 0.3s, all 0.3s;
+    transition: transform 0.3s, all 0.3s;
+}
+
+footer .links .urls ul li a:hover,
+footer .links .urls ul li a:focus {
+    text-decoration: none;
+    -webkit-transition: -webkit-transform 0.3s, all 0.3s;
+    -moz-transition: -moz-transform 0.3s, all 0.3s;
+    transition: transform 0.3s, all 0.3s;
+    color: #ff5e5e;
+}
+
+footer .main .contact a {
+    color: #ff5e5e;
+}
+
+footer .links .credits {
+    margin-top: 60px;
+    font-size: 12px;
+    color: #4b5353;
+}
+
+footer .links .credits .float-right {
+    color: #fff;
 }
 
 section.page {
@@ -942,6 +1047,18 @@ section.page .wrapper .point {
     border-bottom: 1px solid #fff;
     padding: 20px 0 60px 0;
     margin-bottom: 30px;
+}
+
+section.page .wrapper .point .transfer-icon::before {
+    position: absolute;
+    right: -6px;
+    top: 40%;
+    content: "\f021";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 15px;
 }
 
 section.page .wrapper .point > .row {
@@ -1087,6 +1204,13 @@ section.page.store #all-games .buttons a
     font-size: 11px;
 }
 
+section.page.store .wrapper .buttons img,
+section.page.store .wrapper .buttons .fa.fa-steam {
+     width: 12px;
+     height: 12px;
+     margin-right: 3px;
+ }
+
 section.page.store .wrapper .buttons .price
 {
     right: 0;
@@ -1215,7 +1339,6 @@ section.page.store .wrapper .tabs .nav-tabs > li > a.active {
         background-image: url("../img/blueBall.png");
         color: transparent;
         z-index: -1;
-        left: 29%;
     }
 
     section.about .schema .item .floating-text {
@@ -1233,8 +1356,13 @@ section.page.store .wrapper .tabs .nav-tabs > li > a.active {
     section.about .schema .item.item-again {
         opacity: 1;
     }
+
     section.introduction .ico-box {
         margin-top: -0px;
+    }
+
+    section.page .wrapper .point .transfer-icon::before {
+        display: none;
     }
 }
 
@@ -1319,7 +1447,6 @@ section.page.store .wrapper .tabs .nav-tabs > li > a.active {
         background-image: url("../img/blueBall.png");
         color: transparent;
         z-index: -1;
-        left: 35%;
     }
 
     section.about .schema .item .floating-text {
@@ -1337,8 +1464,13 @@ section.page.store .wrapper .tabs .nav-tabs > li > a.active {
     section.about .schema .item.item-again {
         opacity: 1;
     }
+
     section.introduction .ico-box {
         margin-top: -0px;
+    }
+
+    section.page .wrapper .point .transfer-icon::before {
+        display: none;
     }
 }
 
@@ -1425,7 +1557,6 @@ section.page.store .wrapper .tabs .nav-tabs > li > a.active {
         background-image: url("../img/blueBall.png");
         color: transparent;
         z-index: -1;
-        left: 40%;
     }
 
     section.about .schema .item .floating-text {
@@ -1443,7 +1574,12 @@ section.page.store .wrapper .tabs .nav-tabs > li > a.active {
     section.about .schema .item.item-again {
         opacity: 1;
     }
+
     section.introduction .ico-box {
         margin-top: -0px;
+    }
+
+    section.page .wrapper .point .transfer-icon::before {
+        display: none;
     }
 }
