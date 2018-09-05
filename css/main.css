@@ -975,6 +975,7 @@ footer .links .main p {
 footer .links .main .contact {
     margin-top: 0px;
     font-size: 12px;
+    margin-bottom: 30px;
 }
 
 footer .links .urls,
@@ -1236,7 +1237,18 @@ section.page.store ul.nav-tabs {
 section.page.store ul.nav-tabs li a {
     line-height: 30px;
     font-weight: normal;
-    margin-right: 15px;
+    border-radius: 0;
+    margin-right: 1px;
+}
+
+section.page.store ul.nav-tabs li:first-child a {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+}
+
+section.page.store ul.nav-tabs li:last-child a {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
 }
 
 section.page.store .wrapper .tabs .nav-tabs > li > a.active {
@@ -1245,6 +1257,22 @@ section.page.store .wrapper .tabs .nav-tabs > li > a.active {
     text-decoration: none;
     transition: all .15s ease-in-out;
     border: none;
+}
+
+section.page.store .wrapper .tabs .nav-tabs > li > a.active::before {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    content: "";
+    border-top: 10px solid #fd005e;
+    position: absolute;
+    bottom: -10px;
+    left: 40%;
+}
+
+section.page.store .wrapper p.balance {
+    margin-bottom: 10px;
 }
 
 /*Mobile*/

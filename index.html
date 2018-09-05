@@ -73,19 +73,19 @@
 												<span>ICO start in</span>
 												<div class="time">
 													<div class="block">
-														<div class="number">7</div>
+														<div class="number counter-days">0</div>
 														<div class="title">Days</div>
 													</div>
 													<div class="block">
-														<div class="number">4</div>
+														<div class="number counter-hours">0</div>
 														<div class="title">Hours</div>
 													</div>
 													<div class="block">
-														<div class="number">9</div>
+														<div class="number counter-minutes">0</div>
 														<div class="title">Minutes</div>
 													</div>
 													<div class="block">
-														<div class="number">38</div>
+														<div class="number counter-seconds">0</div>
 														<div class="title">Seconds</div>
 													</div>
 												</div>
@@ -791,7 +791,7 @@
 			<div class="links">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-4 offset-lg-1 main">
+						<div class="col-lg-4 offset-lg-1 col-md-4 main center-mobile">
 							<div class="logo">
 								<img src="http://www.pawelkrol.eu/images/logo/logo.png"/>
 							</div>
@@ -802,7 +802,7 @@
 								Contact: <a href="mailto:mail@to.com">mail@to.com</a>
 							</div>
 						</div>
-						<div class="col-lg-3 urls">
+						<div class="col-lg-3 col-md-4 urls center-mobile">
 							<h3>Some links</h3>
 							<ul>
 								<li><a href="#">Lorem ipsum m m m m</a></li>
@@ -811,7 +811,7 @@
 								<li><a href="#">Ipsum</a></li>
 							</ul>
 						</div>
-						<div class="col-lg-3 urls">
+						<div class="col-lg-3 col-md-4 urls center-mobile">
 							<h3>Some links</h3>
 							<ul>
 								<li><a href="#">Lorem ipsum m m m m</a></li>
@@ -838,11 +838,41 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script>
-		    $(function () {
+		    $(function ()
+		    {
+		        let _days = $(".counter-days");
+                let _hours = $(".counter-hours");
+                let _minutes = $(".counter-minutes");
+                let _seconds = $(".counter-seconds");
+
+                let endTime = (Date.parse(new Date("22 November 2018 9:56:00 GMT+01:00")) / 1000);
+
 		        $(document).scroll(function () {
 		            var $nav = $(".navbar");
 		            $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
 		        });
+
+                function makeTimer()
+                {
+                    let now = (Date.parse(new Date()) / 1000);
+                    let timeLeft = endTime - now;
+
+                    let days = Math.floor(timeLeft / 86400);
+                    let hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+                    let minutes = Math.floor((timeLeft - (days * 86400) - (hours * 3600 )) / 60);
+                    let seconds = Math.floor((timeLeft - (days * 86400) - (hours * 3600) - (minutes * 60)));
+
+                    if (hours < "10") { hours = "0" + hours; }
+                    if (minutes < "10") { minutes = "0" + minutes; }
+                    if (seconds < "10") { seconds = "0" + seconds; }
+
+                    _days.html(days);
+                    _hours.html(hours);
+                    _minutes.html(minutes);
+                    _seconds.html(seconds);
+                }
+
+                setInterval(function() { makeTimer(); }, 1000);
 		    });
 		</script>
 	</body>
