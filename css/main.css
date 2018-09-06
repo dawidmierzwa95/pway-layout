@@ -1354,6 +1354,7 @@ section.page.store .wrapper p.balance {
         height: 140px;
         display: flex;
         align-items: center;
+        justify-content: center;
         font-size: 25px;
     }
 
@@ -1462,6 +1463,7 @@ section.page.store .wrapper p.balance {
         height: 140px;
         display: flex;
         align-items: center;
+        justify-content: center;
         font-size: 25px;
     }
 
@@ -1572,6 +1574,7 @@ section.page.store .wrapper p.balance {
         height: 140px;
         display: flex;
         align-items: center;
+        justify-content: center;
         font-size: 25px;
     }
 
